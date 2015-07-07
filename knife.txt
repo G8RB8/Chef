@@ -1,0 +1,72 @@
+H3@r5t!
+test
+Windows PowerShell
+Copyright (C) 2009 Microsoft Corporation. All rights reserved.
+
+PS C:\chef-repo> knife cookbook delete apache
+ERROR: Failed to authenticate to https://api.opscode.com/organizations/bba as ve
+retech_jim with key C:/chef-repo/veretech_jim.pem
+Response:  Invalid signature for user or client 'veretech_jim'
+PS C:\chef-repo> knife cookbook delete apache
+ERROR: Failed to authenticate to https://api.opscode.com/organizations/bba as ve
+retech_jim with key C:/chef-repo/veretech_jim.pem
+Response:  Invalid signature for user or client 'veretech_jim'
+PS C:\chef-repo> knife cookbook delete apache
+Do you really want to delete apache version 0.1.0? (Y/N) y
+Deleted cookbook[apache version 0.1.0]
+PS C:\chef-repo> knife cookbook delete datacenter
+Do you really want to delete datacenter version 0.1.0? (Y/N) y
+Deleted cookbook[datacenter version 0.1.0]
+PS C:\chef-repo> knife cookbook delete hosts
+Do you really want to delete hosts version 0.1.0? (Y/N) y
+Deleted cookbook[hosts version 0.1.0]
+PS C:\chef-repo> knife cookbook delete ip-logger
+Do you really want to delete ip-logger version 0.1.0? (Y/N) y
+Deleted cookbook[ip-logger version 0.1.0]
+PS C:\chef-repo> ping api.opscode.com
+
+Pinging api.opscode.com [184.106.28.80] with 32 bytes of data:
+Reply from 184.106.28.80: bytes=32 time=72ms TTL=43
+Reply from 184.106.28.80: bytes=32 time=67ms TTL=43
+Reply from 184.106.28.80: bytes=32 time=68ms TTL=43
+Reply from 184.106.28.80: bytes=32 time=75ms TTL=43
+
+Ping statistics for 184.106.28.80:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 67ms, Maximum = 75ms, Average = 70ms
+PS C:\chef-repo> knife bootstrap 54.172.38.225 -x Administrator -P 2@)nTX)$;J
+Unexpected token ')' in expression or statement.
+At line:1 char:54
++ knife bootstrap 54.172.38.225 -x Administrator -P 2@) <<<< nTX)$;J
+    + CategoryInfo          : ParserError: ():String) [], ParentContainsErrorR
+   ecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\chef-repo> knife bootstrap 54.172.38.225 -x Administrator -P '2@)nTX)$;J'
+Connecting to 54.172.38.225
+ERROR: Network Error: A connection attempt failed because the connected party di
+d not properly respond after a period of time, or established connection failed
+because connected host has failed to respond. - connect(2)
+Check your knife configuration and network settings
+PS C:\chef-repo> ping 54.164.12.206
+
+Pinging 54.164.12.206 with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 54.164.12.206:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+PS C:\chef-repo> ping 54.164.12.206
+
+Pinging 54.164.12.206 with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 54.164.12.206:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+PS C:\chef-repo>
