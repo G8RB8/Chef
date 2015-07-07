@@ -1,0 +1,714 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang1033\f0\fs22 Windows Cookbook\par
+================\par
+Provides a set of Windows-specific primitives (Chef resources) meant to aid in the creation of cookbooks/recipes targeting the Windows platform.\par
+\par
+\par
+Requirements\par
+-------------\par
+Version 1.3.0+ of this cookbook requires Chef 0.10.10+.\par
+\par
+\par
+### Platforms\par
+* Windows XP\par
+* Windows Vista\par
+* Windows Server 2003 R2\par
+* Windows 7\par
+* Windows Server 2008 (R1, R2)\par
+\par
+The `windows_task` LWRP requires Windows Server 2008 due to its API usage.\par
+\par
+### Cookbooks\par
+The following cookbooks provided by Opscode are required as noted:\par
+\par
+* chef_handler (`windows::reboot_handler` leverages the chef_handler LWRP)\par
+\par
+Attributes\par
+----------\par
+* `node['windows']['allow_pending_reboots']` - used to configure the `WindowsRebootHandler` (via the `windows::reboot_handler` recipe) to act on pending reboots. default is true (ie act on pending reboots).  The value of this attribute only has an effect if the `windows::reboot_handler` is in a node's run list.\par
+* `node['windows']['allow_reboot_on_failure']` - used to register the `WindowsRebootHandler` (via the `windows::reboot_handler` recipe) as an exception handler too to act on reboots not only at the end of successful Chef runs, but even at the end of failed runs. default is false (ie reboot only after successful runs).  The value of this attribute only has an effect if the `windows::reboot_handler` is in a node's run list.\par
+\par
+\par
+Resource/Provider\par
+-----------------\par
+### windows_auto_run\par
+#### Actions\par
+- :create: Create an item to be run at login\par
+- :remove: Remove an item that was previously setup to run at login\par
+\par
+#### Attribute Parameters\par
+- :name: Name attribute. The name of the value to be stored in the registry\par
+- :program: The program to be run at login\par
+- :args: The arguments for the program\par
+\par
+#### Examples\par
+Run BGInfo at login\par
+\par
+```ruby\par
+windows_auto_run 'BGINFO' do\par
+  program 'C:/Sysinternals/bginfo.exe'\par
+  args    '\\'C:/Sysinternals/Config.bgi\\' /NOLICPROMPT /TIMER:0'\par
+  not_if  \{ Registry.value_exists?(AUTO_RUN_KEY, 'BGINFO') \}\par
+  action  :create\par
+end\par
+```\par
+\par
+### windows_batch\par
+(Chef 11.6.0 includes a built-in [batch](http://docs.opscode.com/resource_batch.html) resource, so use that in preference to `windows_batch` if possible.)\par
+\par
+Execute a batch script using the cmd.exe interpreter (much like the script resources for bash, csh, powershell, perl, python and ruby). A temporary file is created and executed like other script resources, rather than run inline. By their nature, Script resources are not idempotent, as they are completely up to the user's imagination. Use the `not_if` or `only_if` meta parameters to guard the resource for idempotence.\par
+\par
+#### Actions\par
+- :run: run the batch file\par
+\par
+#### Attribute Parameters\par
+- command: name attribute. Name of the command to execute.\par
+- code: quoted string of code to execute.\par
+- creates: a file this command creates - if the file exists, the command will not be run.\par
+- cwd: current working directory to run the command from.\par
+- flags: command line flags to pass to the interpreter when invoking.\par
+- user: A user name or user ID that we should change to before running this command.\par
+- group: A group name or group ID that we should change to before running this command.\par
+\par
+#### Examples\par
+```ruby\par
+windows_batch 'unzip_and_move_ruby' do\par
+  code <<-EOH\par
+  7z.exe x #\{Chef::Config[:file_cache_path]\}/ruby-1.8.7-p352-i386-mingw32.7z  -oC:\\\\source -r -y\par
+  xcopy C:\\\\source\\\\ruby-1.8.7-p352-i386-mingw32 C:\\\\ruby /e /y\par
+  EOH\par
+end\par
+```\par
+\par
+```ruby\par
+windows_batch 'echo some env vars' do\par
+  code <<-EOH\par
+  echo %TEMP%\par
+  echo %SYSTEMDRIVE%\par
+  echo %PATH%\par
+  echo %WINDIR%\par
+  EOH\par
+end\par
+```\par
+\par
+### windows_feature\par
+Windows Roles and Features can be thought of as built-in operating system packages that ship with the OS.  A server role is a set of software programs that, when they are installed and properly configured, lets a computer perform a specific function for multiple users or other computers within a network.  A Role can have multiple Role Services that provide functionality to the Role.  Role services are software programs that provide the functionality of a role. Features are software programs that, although they are not directly parts of roles, can support or augment the functionality of one or more roles, or improve the functionality of the server, regardless of which roles are installed.  Collectively we refer to all of these attributes as 'features'.\par
+\par
+This resource allows you to manage these 'features' in an unattended, idempotent way.\par
+\par
+There are two providers for the `windows_features` which map into Microsoft's two major tools for managing roles/features: [Deployment Image Servicing and Management (DISM)](http://msdn.microsoft.com/en-us/library/dd371719%28v=vs.85%29.aspx) and [Servermanagercmd](http://technet.microsoft.com/en-us/library/ee344834%28WS.10%29.aspx) (The CLI for Server Manager).  As Servermanagercmd is deprecated, Chef will set the default provider to `Chef::Provider::WindowsFeature::DISM` if DISM is present on the system being configured.  The default provider will fall back to `Chef::Provider::WindowsFeature::ServerManagerCmd`.\par
+\par
+For more information on Roles, Role Services and Features see the [Microsoft TechNet article on the topic](http://technet.microsoft.com/en-us/library/cc754923.aspx).  For a complete list of all features that are available on a node type either of the following commands at a command prompt:\par
+\par
+```text\par
+dism /online /Get-Features\par
+servermanagercmd -query\par
+```\par
+\par
+#### Actions\par
+- :install: install a Windows role/feature\par
+- :remove: remove a Windows role/feature\par
+\par
+#### Attribute Parameters\par
+- feature_name: name of the feature/role to install.  The same feature may have different names depending on the provider used (ie DHCPServer vs DHCP; DNS-Server-Full-Role vs DNS).\par
+- all: Boolean. Optional. Default: false. DISM provider only. Forces all dependencies to be installed.\par
+- source: String. Optional. DISM provider only. Uses local repository for feature install.\par
+\par
+#### Providers\par
+- **Chef::Provider::WindowsFeature::DISM**: Uses Deployment Image Servicing and Management (DISM) to manage roles/features.\par
+- **Chef::Provider::WindowsFeature::ServerManagerCmd**: Uses Server Manager to manage roles/features.\par
+- **Chef::Provider::WindowsFeaturePowershell**: Uses Powershell to manage roles/features. (see [COOK-3714](https://tickets.opscode.com/browse/COOK-3714)\par
+\par
+#### Examples\par
+Enable the node as a DHCP Server\par
+\par
+```ruby\par
+windows_feature 'DHCPServer' do\par
+  action :install\par
+end\par
+```\par
+\par
+Enable TFTP\par
+\par
+```ruby\par
+windows_feature 'TFTP' do\par
+  action :install\par
+end\par
+```\par
+\par
+Enable .Net 3.5.1 on Server 2012 using repository files on DVD and\par
+install all dependencies\par
+\par
+```ruby\par
+windows_feature "NetFx3" do\par
+  action :install\par
+  all true\par
+  source "d:\\sources\\sxs"\par
+end\par
+```\par
+\par
+Disable Telnet client/server\par
+\par
+```ruby\par
+%w[TelnetServer TelnetClient].each do |feature|\par
+  windows_feature feature do\par
+    action :remove\par
+  end\par
+end\par
+```\par
+\par
+### windows_font\par
+Installs a font.\par
+\par
+Font files should be included in the cookbooks\par
+\par
+#### Actions\par
+- :install: install a font to the system fonts directory.\par
+\par
+#### Attribute Parameters\par
+- file: The name of the font file name to install. It should exist in the files/default directory of the cookbook you're calling windows_font from. Defaults to the resource name.\par
+\par
+#### Examples\par
+\par
+```ruby\par
+windows_font 'Code New Roman.otf'\par
+```\par
+\par
+### windows_package\par
+Manage Windows application packages in an unattended, idempotent way.\par
+\par
+The following application installers are currently supported:\par
+\par
+* MSI packages\par
+* InstallShield\par
+* Wise InstallMaster\par
+* Inno Setup\par
+* Nullsoft Scriptable Install System\par
+\par
+If the proper installer type is not passed into the resource's installer_type attribute, the provider will do it's best to identify the type by introspecting the installation package.  If the installation type cannot be properly identified the `:custom` value can be passed into the installer_type attribute along with the proper flags for silent/quiet installation (using the `options` attribute..see example below).\par
+\par
+__PLEASE NOTE__ - For proper idempotence the resource's `package_name` should be the same as the 'DisplayName' registry value in the uninstallation data that is created during package installation.  The easiest way to definitively find the proper 'DisplayName' value is to install the package on a machine and search for the uninstall information under the following registry keys:\par
+\par
+* `HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall`\par
+* `HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall`\par
+* `HKEY_LOCAL_MACHINE\\Software\\Wow6464Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall`\par
+\par
+For maximum flexibility the `source` attribute supports both remote and local installation packages.\par
+\par
+#### Actions\par
+- :install: install a package\par
+- :remove: remove a package. The remove action is completely hit or miss as many application uninstallers do not support a full silent/quiet mode.\par
+\par
+#### Attribute Parameters\par
+- package_name: name attribute. The 'DisplayName' of the application installation package.\par
+- source: The source of the windows installer.  This can either be a URI or a local path.\par
+- installer_type: They type of windows installation package. valid values are: :msi, :inno, :nsis, :wise, :installshield, :custom.  If this value is not provided, the provider will do it's best to identify the installer type through introspection of the file.\par
+- checksum: useful if source is remote, the SHA-256 checksum of the file--if the local file matches the checksum, Chef will not download it\par
+- options: Additional options to pass the underlying installation command\par
+- timeout: set a timeout for the package download (default 600 seconds)\par
+- version: The version number of this package, as indicated by the 'DisplayVersion' value in one of the 'Uninstall' registry keys.  If the given version number does equal the 'DisplayVersion' in the registry, the package will be installed.\par
+- success_codes: set an array of possible successful installation\par
+  return codes. Previously this was hardcoded, but certain MSIs may\par
+  have a different return code, e.g. 3010 for reboot required. Must be\par
+  an array, and defaults to `[0, 42, 127]`.\par
+\par
+#### Examples\par
+\par
+Install PuTTY (InnoSetup installer)\par
+```ruby\par
+windows_package 'PuTTY version 0.60' do\par
+  source 'http://the.earth.li/~sgtatham/putty/latest/x86/putty-0.60-installer.exe'\par
+  installer_type :inno\par
+  action :install\par
+end\par
+```\par
+\par
+Install 7-Zip (MSI installer)\par
+```ruby\par
+windows_package '7-Zip 9.20 (x64 edition)' do\par
+  source 'http://downloads.sourceforge.net/sevenzip/7z920-x64.msi'\par
+  action :install\par
+end\par
+```\par
+\par
+Install Notepad++ (Y U No Emacs?) using a local installer\par
+```ruby\par
+windows_package 'Notepad++' do\par
+  source 'c:/installation_files/npp.5.9.2.Installer.exe'\par
+  action :install\par
+end\par
+```\par
+\par
+Install VLC for that Xvid (NSIS installer)\par
+```ruby\par
+windows_package 'VLC media player 1.1.10' do\par
+  source 'http://superb-sea2.dl.sourceforge.net/project/vlc/1.1.10/win32/vlc-1.1.10-win32.exe'\par
+  action :install\par
+end\par
+```\par
+\par
+Install Firefox as custom installer and manually set the silent install flags\par
+```ruby\par
+windows_package 'Mozilla Firefox 5.0 (x86 en-US)' do\par
+  source 'http://archive.mozilla.org/pub/mozilla.org/mozilla.org/firefox/releases/5.0/win32/en-US/Firefox%20Setup%205.0.exe'\par
+  options '-ms'\par
+  installer_type :custom\par
+  action :install\par
+end\par
+```\par
+\par
+Google Chrome FTW (MSI installer)\par
+```ruby\par
+windows_package 'Google Chrome' do\par
+  source 'https://dl-ssl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B806F36C0-CB54-4A84-A3F3-0CF8A86575E0%7D%26lang%3Den%26browser%3D3%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dfalse/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi'\par
+  action :install\par
+end\par
+```\par
+\par
+Remove Google Chrome\par
+```ruby\par
+windows_package 'Google Chrome' do\par
+  action :remove\par
+end\par
+```\par
+\par
+Remove 7-Zip\par
+```ruby\par
+windows_package '7-Zip 9.20 (x64 edition)' do\par
+  action :remove\par
+end\par
+```\par
+\par
+### windows_printer_port\par
+\par
+Create and delete TCP/IPv4 printer ports.\par
+\par
+#### Actions\par
+- :create: Create a TCIP/IPv4 printer port. This is the default action.\par
+- :delete: Delete a TCIP/IPv4 printer port\par
+\par
+#### Attribute Parameters\par
+- :ipv4_address: Name attribute. Required. IPv4 address, e.g. '10.0.24.34'\par
+- :port_name: Port name. Optional. Defaults to 'IP_' + :ipv4_address\par
+- :port_number: Port number. Optional. Defaults to 9100.\par
+- :port_description: Port description. Optional.\par
+- :snmp_enabled: Boolean. Optional. Defaults to false.\par
+- :port_protocol: Port protocol, 1 (RAW), or 2 (LPR). Optional. Defaults to 1.\par
+\par
+#### Examples\par
+\par
+Create a TCP/IP printer port named 'IP_10.4.64.37' with all defaults\par
+```ruby\par
+windows_printer_port '10.4.64.37' do\par
+end\par
+```\par
+\par
+Delete a printer port\par
+```ruby\par
+windows_printer_port '10.4.64.37' do\par
+  action :delete\par
+end\par
+```\par
+\par
+Delete a port with a custom port_name\par
+```ruby\par
+windows_printer_port '10.4.64.38' do\par
+  port_name 'My awesome port'\par
+  action :delete\par
+end\par
+```\par
+\par
+Create a port with more options\par
+```ruby\par
+windows_printer_port '10.4.64.39' do\par
+  port_name 'My awesome port'\par
+  snmp_enabled true\par
+  port_protocol 2\par
+end\par
+```\par
+\par
+### windows_printer\par
+\par
+Create Windows printer. Note that this doesn't currently install a printer\par
+driver. You must already have the driver installed on the system.\par
+\par
+The Windows Printer LWRP will automatically create a TCP/IP printer port for you using the `ipv4_address` property. If you want more granular control over the printer port, just create it using the `windows_printer_port` LWRP before creating the printer.\par
+\par
+#### Actions\par
+- :create: Create a new printer\par
+- :delete: Delete a new printer\par
+\par
+#### Attribute Parameters\par
+- :device_id: Name attribute. Required. Printer queue name, e.g. 'HP LJ 5200 in fifth floor copy room'\par
+- :comment: Optional string describing the printer queue.\par
+- :default: Boolean. Optional. Defaults to false. Note that Windows sets the first printer defined to the default printer regardless of this setting.\par
+- :driver_name: String. Required. Exact name of printer driver. Note that the printer driver must already be installed on the node.\par
+- :location: Printer location, e.g. 'Fifth floor copy room', or 'US/NYC/Floor42/Room4207'\par
+- :shared: Boolean. Defaults to false.\par
+- :share_name: Printer share name.\par
+- :ipv4_address: Printer IPv4 address, e.g. '10.4.64.23'. You don't have to be able to ping the IP addresss to set it. Required.\par
+\par
+An error of "Set-WmiInstance : Generic failure" is most likely due to the printer driver name not matching or not being installed.\par
+\par
+#### Examples\par
+\par
+Create a printer\par
+```ruby\par
+windows_printer 'HP LaserJet 5th Floor' do\par
+  driver_name 'HP LaserJet 4100 Series PCL6'\par
+  ipv4_address '10.4.64.38'\par
+end\par
+```\par
+\par
+Delete a printer. Note: this doesn't delete the associated printer port. See `windows_printer_port` above for how to delete the port.\par
+```ruby\par
+windows_printer 'HP LaserJet 5th Floor' do\par
+  action :delete\par
+end\par
+```\par
+\par
+### windows_reboot\par
+Sets required data in the node's run_state to notify `WindowsRebootHandler` a reboot is requested.  If Chef run completes successfully a reboot will occur if the `WindowsRebootHandler` is properly registered as a report handler.  As an action of `:request` will cause a node to reboot every Chef run, this resource is usually notified by other resources...ie restart node after a package is installed (see example below).\par
+\par
+#### Actions\par
+- :request: requests a reboot at completion of successful Cher run.  requires `WindowsRebootHandler` to be registered as a report handler.\par
+- :cancel: remove reboot request from node.run_state.  this will cancel *ALL* previously requested reboots as this is a binary state.\par
+\par
+#### Attribute Parameters\par
+- :timeout: Name attribute. timeout delay in seconds to wait before proceeding with the requested reboot. default is 60 seconds\par
+- :reason: comment on the reason for the reboot. default is 'Opscode Chef initiated reboot'\par
+\par
+#### Examples\par
+If the package installs, schedule a reboot at end of chef run\par
+```ruby\par
+windows_reboot 60 do\par
+  reason 'cause chef said so'\par
+  action :nothing\par
+end\par
+\par
+windows_package 'some_package' do\par
+  action :install\par
+  notifies :request, 'windows_reboot[60]'\par
+end\par
+```\par
+\par
+Cancel the previously requested reboot\par
+```ruby\par
+windows_reboot 60 do\par
+  action :cancel\par
+end\par
+```\par
+\par
+### windows_registry\par
+(Chef 11.6.0 includes a built-in [registry_key](http://docs.opscode.com/resource_registry_key.html) resource, so use that in preference to `windows_registry` if possible.)\par
+\par
+Creates and modifies Windows registry keys.\par
+\par
+*Change in v1.3.0: The Win32 classes use `::Win32` to avoid namespace conflict with `Chef::Win32` (introduced in Chef 0.10.10).*\par
+\par
+#### Actions\par
+- :create: create a new registry key with the provided values.\par
+- :modify: modify an existing registry key with the provided values.\par
+- :force_modify: modify an existing registry key with the provided values.  ensures the value is actually set by checking multiple times. useful for fighting race conditions where two processes are trying to set the same registry key.  This will be updated in the near future to use 'RegNotifyChangeKeyValue' which is exposed by the WinAPI and allows a process to register for notification on a registry key change.\par
+- :remove: removes a value from an existing registry key\par
+\par
+#### Attribute Parameters\par
+- key_name: name attribute. The registry key to create/modify.\par
+- values: hash of the values to set under the registry key. The individual hash items will become respective 'Value name' => 'Value data' items in the registry key.\par
+- type: Type of key to create, defaults to REG_SZ. Must be a symbol, see the overview below for valid values.\par
+\par
+#### Registry key types\par
+- :binary: REG_BINARY\par
+- :string: REG_SZ\par
+- :multi_string: REG_MULTI_SZ\par
+- :expand_string: REG_EXPAND_SZ\par
+- :dword: REG_DWORD\par
+- :dword_big_endian: REG_DWORD_BIG_ENDIAN\par
+- :qword: REG_QWORD\par
+\par
+#### Examples\par
+\par
+Make the local windows proxy match the one set for Chef\par
+```ruby\par
+proxy = URI.parse(Chef::Config[:http_proxy])\par
+windows_registry 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings' do\par
+  values 'ProxyEnable' => 1, 'ProxyServer' => "#\{proxy.host\}:#\{proxy.port\}", 'ProxyOverride' => '<local>'\par
+end\par
+```\par
+\par
+Enable Remote Desktop and poke the firewall hole\par
+```ruby\par
+windows_registry 'HKLM\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server' do\par
+  values 'FdenyTSConnections' => 0\par
+end\par
+```\par
+\par
+Delete an item from the registry\par
+```ruby\par
+windows_registry 'HKCU\\Software\\Test' do\par
+  #Key is the name of the value that you want to delete the value is always empty\par
+  values 'ValueToDelete' => ''\par
+  action :remove\par
+end\par
+```\par
+\par
+Add a REG_MULTI_SZ value to the registry\par
+```ruby\par
+windows_registry 'HKCU\\Software\\Test' do\par
+  values 'MultiString' => ['line 1', 'line 2', 'line 3']\par
+  type :multi_string\par
+end\par
+```\par
+\par
+#### Library Methods\par
+\par
+```ruby\par
+Registry.value_exists?('HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run','BGINFO')\par
+Registry.key_exists?('HKLM\\SOFTWARE\\Microsoft')\par
+BgInfo = Registry.get_value('HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run','BGINFO')\par
+```\par
+\par
+### windows_path\par
+#### Actions\par
+- :add: Add an item to the system path\par
+- :remove: Remove an item from the system path\par
+\par
+#### Attribute Parameters\par
+- :path: Name attribute. The name of the value to add to the system path\par
+\par
+#### Examples\par
+\par
+Add Sysinternals to the system path\par
+```ruby\par
+windows_path 'C:\\Sysinternals' do\par
+  action :add\par
+end\par
+```\par
+\par
+Remove 7-Zip from the system path\par
+```ruby\par
+windows_path 'C:\\7-Zip' do\par
+  action :remove\par
+end\par
+```\par
+\par
+### windows_task\par
+Creates, deletes or runs a Windows scheduled task. Requires Windows\par
+Server 2008 due to API usage.\par
+\par
+#### Actions\par
+- :create: creates a task\par
+- :delete: deletes a task\par
+- :run: runs a task\par
+- :change: changes the un/pw or command of a task\par
+- :enable: enable a task\par
+- :disable: disable a task\par
+\par
+#### Attribute Parameters\par
+- name: name attribute, The task name.\par
+- command: The command the task will run.\par
+- cwd: The directory the task will be run from.\par
+- user: The user to run the task as. (requires password)\par
+- password: The user's password. (requires user)\par
+- run_level: Run with limited or highest privileges.\par
+- frequency: Frequency with which to run the task. (hourly, daily, ect.)\par
+- frequency_modifier: Multiple for frequency. (15 minutes, 2 days)\par
+- start_day: Specifies the first date on which the task runs. Optional string (MM/DD/YYYY)\par
+- start_time: Specifies the start time to run the task. Optional string (HH:mm)\par
+\par
+#### Examples\par
+\par
+Run Chef every 15 minutes\par
+```ruby\par
+windows_task 'Chef client' do\par
+  user 'Administrator'\par
+  password '$ecR3t'\par
+  cwd 'C:\\chef\\bin'\par
+  command 'chef-client -L C:\\tmp\\'\par
+  run_level :highest\par
+  frequency :minute\par
+  frequency_modifier 15\par
+end\par
+```\par
+\par
+Update Chef Client task with new password and log location\par
+```ruby\par
+windows_task 'Chef client' do\par
+  user 'Administrator'\par
+  password 'N3wPassW0Rd'\par
+  cwd 'C:\\chef\\bin'\par
+  command 'chef-client -L C:\\chef\\logs\\'\par
+  action :change\par
+end\par
+```\par
+\par
+Delete a taks named 'old task'\par
+```ruby\par
+windows_task 'old task' do\par
+  action :delete\par
+end\par
+```\par
+\par
+Enable a task named 'Chef client'\par
+```ruby\par
+windows_task 'Chef client' do\par
+  action :enable\par
+end\par
+```\par
+\par
+Disable a task named 'Chef client'\par
+```ruby\par
+windows_task 'Chef client' do\par
+  action :disable\par
+end\par
+```\par
+\par
+### windows_zipfile\par
+Most version of Windows do not ship with native cli utility for managing compressed files.  This resource provides a pure-ruby implementation for managing zip files. Be sure to use the `not_if` or `only_if` meta parameters to guard the resource for idempotence or action will be taken every Chef run.\par
+\par
+#### Actions\par
+- :unzip: unzip a compressed file\par
+- :zip: zip a directory (recursively)\par
+\par
+#### Attribute Parameters\par
+- path: name attribute. The path where files will be (un)zipped to.\par
+- source: source of the zip file (either a URI or local path) for :unzip, or directory to be zipped for :zip.\par
+- overwrite: force an overwrite of the files if they already exist.\par
+- checksum: for :unzip, useful if source is remote, if the local file matches the SHA-256 checksum, Chef will not download it.\par
+\par
+#### Examples\par
+\par
+Unzip a remote zip file locally\par
+```ruby\par
+windows_zipfile 'c:/bin' do\par
+  source 'http://download.sysinternals.com/Files/SysinternalsSuite.zip'\par
+  action :unzip\par
+  not_if \{::File.exists?('c:/bin/PsExec.exe')\}\par
+end\par
+```\par
+\par
+Unzip a local zipfile\par
+```ruby\par
+windows_zipfile 'c:/the_codez' do\par
+  source 'c:/foo/baz/the_codez.zip'\par
+  action :unzip\par
+end\par
+```\par
+\par
+Create a local zipfile\par
+```ruby\par
+windows_zipfile 'c:/foo/baz/the_codez.zip' do\par
+  source 'c:/the_codez'\par
+  action :zip\par
+end\par
+```\par
+\par
+Exception/Report Handlers\par
+-------------------------\par
+### WindowsRebootHandler\par
+Required reboots are a necessary evil of configuring and managing Windows nodes.  This report handler (ie fires at the end of Chef runs) acts on requested (Chef initiated) or pending (as determined by the OS per configuration action we performed) reboots.  The `allow_pending_reboots` initialization argument should be set to false if you do not want the handler to automatically reboot a node if it has been determined a reboot is pending.  Reboots can still be requested explicitly via the `windows_reboot` LWRP.\par
+\par
+### Initialization Arguments\par
+- `allow_pending_reboots`: indicator on whether the handler should act on a the Window's 'pending reboot' state. default is true\par
+- `timeout`: timeout delay in seconds to wait before proceeding with the reboot. default is 60 seconds\par
+- `reason`:  comment on the reason for the reboot. default is 'Opscode Chef initiated reboot'\par
+\par
+\par
+Windows ChefSpec Matchers\par
+-------------------------\par
+The Windows cookbook includes custom [ChefSpec](https://github.com/sethvargo/chefspec) matchers you can use to test your own cookbooks that consume Windows cookbook LWRPs.\par
+\par
+###Example Matcher Usage\par
+```ruby\par
+expect(chef_run).to install_windows_package('Node.js').with(\par
+  source: 'http://nodejs.org/dist/v0.10.26/x64/node-v0.10.26-x64.msi')\par
+```\par
+\par
+###Windows Cookbook Matchers\par
+* install_windows_package\par
+* remove_windows_package\par
+* install_windows_feature\par
+* remove_windows_feature\par
+* delete_windows_feature\par
+* create_windows_task\par
+* delete_windows_task\par
+* run_windows_task\par
+* change_windows_task\par
+* add_windows_path\par
+* remove_windows_path\par
+* run_windows_batch\par
+* set_windows_pagefile\par
+* unzip_windows_zipfile_to\par
+* zip_windows_zipfile_to\par
+* create_windows_shortcut\par
+* create_windows_auto_run\par
+* remove_windows_auto_run\par
+* create_windows_printer\par
+* delete_windows_printer\par
+* create_windows_printer_port\par
+* delete_windows_printer_port\par
+* request_windows_reboot\par
+* cancel_windows_reboot\par
+* create_windows_shortcut\par
+\par
+\par
+Usage\par
+-----\par
+\par
+Place an explicit dependency on this cookbook (using depends in the cookbook's metadata.rb) from any cookbook where you would like to use the Windows-specific resources/providers that ship with this cookbook.\par
+\par
+```ruby\par
+depends 'windows'\par
+```\par
+\par
+### default\par
+Convenience recipe that installs supporting gems for many of the resources/providers that ship with this cookbook.\par
+\par
+*Change in v1.3.0: Uses chef_gem instead of gem_package to ensure gem installation in Chef 0.10.10.*\par
+\par
+### reboot_handler\par
+Leverages the `chef_handler` LWRP to register the `WindowsRebootHandler` report handler that ships as part of this cookbook. By default this handler is set to automatically act on pending reboots.  If you would like to change this behavior override `node['windows']['allow_pending_reboots']` and set the value to false.  For example:\par
+\par
+```ruby\par
+name 'base'\par
+description 'base role'\par
+override_attributes(\par
+  'windows' => \{\par
+    'allow_pending_reboots' => false\par
+  \}\par
+)\par
+```\par
+\par
+This will still allow a reboot to be explicitly requested via the `windows_reboot` LWRP.\par
+\par
+By default, the handler will only be registered as a report handler, meaning that it will only fire at the end of successful Chef runs. If the run fails, pending or requested reboots will be ignored. This can lead to a situation where some package was installed and notified a reboot request via the `windows_reboot` LWRP, and then the run fails for some unrelated reason, and the reboot request gets dropped because the resource that notified the reboot request will already be up-to-date at the next run and will not request a reboot again, and thus the requested reboot will never be performed. To change this behavior and register the handler as an exception handler that fires at the end of failed runs too, override `node['windows']['allow_reboot_on_failure']` and set the value to true.\par
+\par
+\par
+License & Authors\par
+-----------------\par
+- Author:: Seth Chisamore (<schisamo@opscode.com>)\par
+- Author:: Doug MacEachern (<dougm@vmware.com>)\par
+- Author:: Paul Morton (<pmorton@biaprotect.com>)\par
+- Author:: Doug Ireton (<doug.ireton@nordstrom.com>)\par
+\par
+```text\par
+Copyright 2011-2013, Opscode, Inc.\par
+Copyright 2010, VMware, Inc.\par
+Copyright 2011, Business Intelligence Associates, Inc\par
+Copyright 2012, Nordstrom, Inc.\par
+\par
+Licensed under the Apache License, Version 2.0 (the "License");\par
+you may not use this file except in compliance with the License.\par
+You may obtain a copy of the License at\par
+\par
+    http://www.apache.org/licenses/LICENSE-2.0\par
+\par
+Unless required by applicable law or agreed to in writing, software\par
+distributed under the License is distributed on an "AS IS" BASIS,\par
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\par
+See the License for the specific language governing permissions and\par
+limitations under the License.\par
+```\par
+\par
+}
+ 

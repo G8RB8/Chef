@@ -1,0 +1,13 @@
+﻿Installing assembly 'D:\VeretechServices\VeretechSpanishHelper\Veretech.SpanishHelper.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\VeretechSpanishHelper\Veretech.SpanishHelper.exe
+   logfile = D:\VeretechServices\VeretechSpanishHelper\Veretech.SpanishHelper.InstallLog
+Installing service Veretech.SpanishHelper...
+Service Veretech.SpanishHelper has been successfully installed.
+Creating EventLog source Veretech.SpanishHelper in log Application...
+Committing assembly 'D:\VeretechServices\VeretechSpanishHelper\Veretech.SpanishHelper.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\VeretechSpanishHelper\Veretech.SpanishHelper.exe
+   logfile = D:\VeretechServices\VeretechSpanishHelper\Veretech.SpanishHelper.InstallLog

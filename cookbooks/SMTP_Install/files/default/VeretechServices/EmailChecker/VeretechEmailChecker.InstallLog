@@ -1,0 +1,96 @@
+﻿Installing assembly 'D:\veretech services\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\veretech services\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\veretech services\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Installing service Veretech Email Checker Service...
+Service Veretech Email Checker Service has been successfully installed.
+Creating EventLog source Veretech Email Checker Service in log Application...
+Committing assembly 'D:\veretech services\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\veretech services\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\veretech services\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Installing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Installing service Veretech Email Checker Service...
+Service Veretech Email Checker Service has been successfully installed.
+Creating EventLog source Veretech Email Checker Service in log Application...
+Committing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Installing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Installing service Veretech Email Checker Service...
+Service Veretech Email Checker Service has been successfully installed.
+Creating EventLog source Veretech Email Checker Service in log Application...
+Committing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Installing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Installing service Veretech Email Checker Service...
+Service Veretech Email Checker Service has been successfully installed.
+Creating EventLog source Veretech Email Checker Service in log Application...
+Committing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Uninstalling assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Removing EventLog source Veretech Email Checker Service.
+Service Veretech Email Checker Service is being removed from the system...
+Service Veretech Email Checker Service was successfully removed from the system.
+Attempt to stop service Veretech Email Checker Service.
+Installing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Installing service Veretech Email Checker Service...
+Service Veretech Email Checker Service has been successfully installed.
+Creating EventLog source Veretech Email Checker Service in log Application...
+Committing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Uninstalling assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Removing EventLog source Veretech Email Checker Service.
+Service Veretech Email Checker Service is being removed from the system...
+Service Veretech Email Checker Service was successfully removed from the system.
+Attempt to stop service Veretech Email Checker Service.
+Installing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog
+Installing service Veretech Email Checker Service...
+Service Veretech Email Checker Service has been successfully installed.
+Creating EventLog source Veretech Email Checker Service in log Application...
+Committing assembly 'D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.exe
+   logfile = D:\VeretechServices\Veretech Email Checker\VeretechEmailChecker.InstallLog

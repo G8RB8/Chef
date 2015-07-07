@@ -1,0 +1,88 @@
+
+git config --global user.name "jim"
+
+git config --global user.email "jim@veretech.com"
+git clone git://github.com/chef/chef-repo.git
+mkdir ./chef-repo/.chef
+C:\Users\Administrator\chef-repo [master +4 ~2 -0 !]> knife ssl fetch
+
+pathVVV
+C:\opscode\chefdk\bin\;C:\opscode\chef\bin\;C:\opscode\chefdk\embedded\bin\;c:\users\%username%\.chefdk\gem\ruby\2.0.0\bin;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\Amazon\cfn-bootstrap\
+
+gem install knife-windows --no-ri --no-rdoc
+
+<<<<< VVVVVVVV>>>>>>>>>>>>>>
+>> 1qaz2wsx
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+knife bootstrap windows winrm 52.7.237.48 -x administrator -P ')OKM9ijn' -N "AmzEIntra"
+
+knife cookbook create IIS_Install
+
+knife cookbook upload IIS_Install
+
+knife node run_list add StgWeb1 "recipe[IIS_Install]"
+
+knife cookbook create ActivatorComplete
+
+knife cookbook upload ActivatorComplete
+
+knife node run_list add StgWeb1 "recipe[ActivatorComplete]"
+
+chef-client
+
+
+
+
+
+
+
+
+
+PS C:\Users\Jim\chef-repo\cookbooks\iis_demo> 
+windowsnode:
+  run_list: recipe[recipes]
+
+PS C:\Users\Jim\chef-repo> 
+ 
+PS C:\Users\Jim\chef-repo> knife node show windowsnode -a iis_demo.indexfile
+
+knife cookbook create ip-logger
+
+knife cookbook create users
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+winrm set winrm/config/winrs '@{MaxMemoryPerShellMB="300"}'
+
+$ winrm set winrm/config '@{MaxTimeoutms="1800000"}'
+
+$ winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+
+$ winrm set winrm/config/service/auth '@{Basic="true"}'
+On the node
+No firewall
+any any rule in the Amazon security group
+UAC off
+IEESC off
+
+
+
+
+
+
+knife bootstrap windows winrm 54.152.71.3 -x administrator -P '(IJN8uhb' -N "StgWeb1"
+
+
+
+
+Move IIS Logs to D:\logs\
+
+
+
+
+
+
+

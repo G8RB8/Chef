@@ -1,0 +1,161 @@
+
+====================================
+Gammadyne Mailer 36.4
+Send Operation
+Performed on 4/27/2011 2:55:30 p.m.
+Project:  MESSAGEC1-day2
+====================================
+
+
+----- Operation Parameters ------
+From: CustomerService@blackbookinsight.com
+To: (auto)
+Reply To: safetynet@blackbookinsight.com
+CC: 
+BCC: 
+Subject: RE: Estimated Credit Score for [[FirstName]] [[LastName]] 
+Sender: CustomerService@blackbookinsight.com
+Reading Confirmation: 
+Expiration Date: 
+Header Character Set: 
+Extended Characters Allowed: 1
+Custom Headers: 
+Database Connect String: DSN=SafetyNet;UID=app_care;PWD=veretech;
+Identity Column: transid
+Recipient Column: email
+Order Column: 
+Order Reversed: 0
+WHERE Clause: nextActionID = 5 AND programID = 4 --AND nextActionDate <= CONVERT(varchar(10), getdate() + 1, 101) + ' 12:00:00 AM'
+Custom SELECT Statement: 
+Trim Data: 0
+Store Sent Date: (disabled)
+Filter Sent Date: (disabled)
+Cursor Type: Keyset driven
+SQL Date Format: 0
+SQL Delimiter Mode: 2
+SQL Delimiter Type: "
+Eliminate Duplicates: 0
+User Exclusions: 
+Domain Exclusions: 
+Domain Inclusions: 
+Begin With Recipient: (disabled)
+Send Only To Range: (disabled)
+Exclusions-Internal: 
+Exclusions-External: 
+Text Body-External: 
+Text Body-Internal: 
+Text Body Subtype: 0
+Text Body Encoding: 2
+Text Body Character Set: 
+Text Body Line Length: 75
+HTML Body-External: 
+HTML Body-Internal: <html xmlns:o>\0D\0A\0D\0A<head>\0D\0A<title>temp</title>\0D\0A<meta name="GENERATOR" content="Microsoft FrontPage 6.0">\0D\0A<meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">\0D\0A<meta name="vs_defaultClientScript" content="JavaScript">\0D\0A<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">\0D\0A<style type="text/css">\0D\0A<!--\0D\0A.EmailBody {\0D\0A\09font-family: Verdana, Arial, Helvetica, sans-serif;\0D\0A\09font-size: 12px;\0D\0A\09color: #555555;\0D\0A\09border: 1pt solid #CCCCCC;\0D\0A\09vertical-align: top;\0D\0A}\0D\0A.Salute {\0D\0A\09font-size: 14px;\0D\0A\09font-weight: bold;\0D\0A\09color: #333333;\0D\0A\09MARGIN: 15px 10px 3px;\0D\0A\0D\0A}\0D\0A.NoMargins {\0D\0A\09PADDING-RIGHT: 0px; \0D\0A\09PADDING-LEFT: 0px; \0D\0A\09PADDING-BOTTOM: 0px; \0D\0A\09PADDING-TOP: 0px\0D\0A}\0D\0A.Questions {\0D\0A\09list-style-type: square;\0D\0A}\0D\0A.Special {\0D\0A\09font-size: smaller;\0D\0A\09vertical-align: super;\0D\0A}\0D\0A-->\0D\0A        </style>\0D\0A</head>\0D\0A\0D\0A<body bgcolor="#f7f8f8" ms_positioning="GridLayout">\0D\0A\0D\0A<table id="tblEmailBody" class="EmailBody" cellspacing="5" bordercolor="#cccccc" cellpadding="15" width="750" bgcolor="#ffffff" align="center">\0D\0A\09<tr>\0D\0A\09\09<td class="NoMargins" valign="top" width="70%" align="left">\0D\0A\09\09<p class="Salute">\0D\0A\09\09<span style="FONT-FAMILY: 'Monotype Corsiva'; FONT-SIZE: 24pt">Black Book</span><span class="Special">&reg;</span></p>\0D\0A\09\09</td>\0D\0A\09</tr>\0D\0A\09<tr>\0D\0A\09\09<td class="NoMargins" align="left"><hr width="80%"></td>\0D\0A\09</tr>\0D\0A\09<tr>\0D\0A\09\09<td>\0D\0A\09\09<p>Black Book recently provided you with an estimate of your credit \0D\0A\09\09score.<br>\0D\0A\09\09We would like to ensure that your vehicle purchase experience is informative \0D\0A\09\09and enjoyable. May we assist by having someone from [[dealername]] contact \0D\0A\09\09you to answer any questions and to help you with your new vehicle purchase? \0D\0A\09\09There&#39;s no cost or obligation for this follow-up service. Simply select \0D\0A\09\09the correct option below.</p>\0D\0A\09\09<ul>\0D\0A\09\09\09<li class="Questions">If you would like to set an appointment or have \0D\0A\09\09\09questions, and would like to speak with someone from [[dealername]],\0D\0A\09\09\09<a href="http://[[str_trim(file_fetch_line("DomainSettings.Config",0))]]/safetynet/start.htm?transid=[[transid]]&email=1&Type=NC&progID=[[programID]]">\0D\0A\09\09\09click here</a> <br />\0D\0A\09\09\09<br />\0D\0A\09\09\09</li>\0D\0A\09\09\09<li class="Questions">If you are still shopping and not ready to speak \0D\0A\09\09\09with someone at [[dealername]],\0D\0A\09\09\09<a href="http://[[str_trim(file_fetch_line("DomainSettings.Config",0))]]/safetynet/start.htm?transid=[[transid]]&email=1&Type=CL&progID=[[programID]]">\0D\0A\09\09\09click here</a> </li>\0D\0A\09\09</ul>\0D\0A\0D\0A\09\09<p>At Black Book, we&#39;re committed to helping you with the most enjoyable \0D\0A\09\09auto buying experience.</p>\0D\0A\09\09<p>Customer Service Team<br>\0D\0A\09\09Black Book<span class="Special">&reg;</span></p>\0D\0A\09\09</td>\0D\0A\09</tr>\0D\0A\09<tr>\0D\0A\09\09<td align="center">\0D\0A\09\09<p><font color="#666666" size="1" face="Tahoma">\0D\0A\09\09Black Book<span class="Special">&reg;</span> has provided this information to help you better understand the auto buying process. \0D\0A\09\09If you do not wish to receive periodic informational updates, \0D\0A\09\09please <a href="http://[[str_trim(file_fetch_line("DomainSettings.Config",0))]]/safetynet/start.htm?transid=[[transid]]&email=1&Type=R&progID=[[programID]]">click here</a> \0D\0A\09\09to be removed from all future mailings.</font></p>\0D\0A\09\09<p><font color="#666666" size="1" face="Tahoma">Black Book® is a registered trademark of © Hearst Business Media Corporation. All rights reserved.</font></p>\0D\0A\09\09</td>\0D\0A\09</tr>\0D\0A</table>\0D\0A\0D\0A</body>\0D\0A\0D\0A</html>\0D\0A
+Canonicalize Data: 1
+Canonicalize Extended: 0
+HTML Domain Exclusions: 
+HTML Body Line Length: (disabled)
+Content-Location: 
+Build Text From HTML: 0
+HTML Body Encoding: 4
+HTML Body Character Set: ISO-8859-1
+Embedded Files List: 
+Embedded Files Directory: 
+Ignore Errors In Embedded Files List: 0
+Attached Files List: 
+Attached Files Directory: 
+Ignore Errors in Attached Files List: 0
+Zip Attachments: 0
+Constructed Attachment Line Length: 0
+Test Mode: 0
+Threads: 32
+Preview Mode: 0
+Last Recipient Only: 0
+Direct Delivery: 1
+Direct Delivery Retries: 3
+Retry Direct Delivery Failures Locally: 0
+Pulse: None
+Immediate Retries: 0
+Recycle Connection: 0
+Append Successes: 
+Append Failures: 
+Append Rejections: 
+Delivery Status Notifications: Failures
+Send Copy of Nth Message: (disabled)
+Log Recipient Data: 0
+Pre-Send Script: 
+Send Script: [[var proc = "stp_CARE_saveEmailDeliveryLog "]]\0A[[let proc += 0]]\0A[[let proc += "," ]]\0A[[let proc += 1]]\0A[[let proc += "," ]]\0A[[let proc += 1]]\0A[[let proc += "," ]]\09\0A[[let proc += transid]]\0A[[let proc += "," ]]\0A[[let proc += nextActionID]]\0A[[let proc += "," ]]\0A[[let proc += sqlize_date(-Now-)]]\0A[[db_execute(proc)]]
+Success Script: [[var proc = "stp_CARE_saveEmailDeliveryLog "]]\0A[[let proc += 1]]\0A[[let proc += "," ]]\0A[[let proc += 0]]\0A[[let proc += "," ]]\0A[[let proc += 0]]\0A[[let proc += "," ]]\09\0A[[let proc += transid]]\0A[[let proc += "," ]]\0A[[let proc += nextActionID]]\0A[[let proc += "," ]]\0A[[let proc += sqlize_date(-Now-)]]\0A[[db_execute(proc)]]\0A\0A[[var proc2 = "stp_CARE_addEmailDeliverySuccess " ]]\0A[[let proc2 += sqlize(-Conversation-) ]]\0A[[let proc2 += "," ]]\0A[[let proc2 += sqlize(-Destination-) ]]\0A[[let proc2 += "," ]]\0A[[let proc2 += sqlize(-From-) ]]\0A[[let proc2 += "," ]]\0A[[let proc2 += sqlize(-Sender-) ]]\0A[[let proc2 += "," ]]\0A[[let proc2 += sqlize(-Subject-) ]]\0A[[let proc2 += "," ]]\0A[[let proc2 += transid]]\0A[[let proc2 += "," ]]\0A[[let proc2 += sqlize_date(-Now-) ]]\0A[[db_execute(proc2)]]\0A\0A[[var proc4 = "stp_CARE_saveEmailHistoryDD "]]\0A[[let proc4 +=  nextActionID]]\0A[[let proc4 += "," ]]\0A[[let proc4 += transid]]\0A[[db_execute(proc4)]]\0A\0A[[var proc3 = "stp_CARE_SaveEmailInfo "]]\0A[[let proc3 += nextActionID]]\0A[[let proc3 += "," ]]\0A[[let proc3 += transid]]\0A[[let proc3 += "," ]]\0A[[let proc3 += programID]]\0A[[db_execute(proc3)]]
+Halt on Success Script Error: 1
+Failure Script: [[var proc2 = "stp_CARE_saveEmailDeliveryLog "]]\0A[[let proc2 += 0]]\0A[[let proc2 += "," ]]\0A[[let proc2 += 0]]\0A[[let proc2 += "," ]]\0A[[let proc2 += 0]]\0A[[let proc2 += "," ]]\09\0A[[let proc2 += transid]]\0A[[let proc2 += "," ]]\0A[[let proc2 += nextActionID]]\0A[[let proc2 += "," ]]\0A[[let proc2 += sqlize_date(-Now-)]]\0A[[db_execute(proc2)]]\0A\0A[[var proc = "stp_CARE_addEmailDeliveryFailure " ]]\0A[[let proc += sqlize(-Body-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-Conversation-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-Destination-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-From-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-Message-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-Sender-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-Subject-) ]]\0A[[let proc += "," ]]\0A[[let proc += transid]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-ErrorCode-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-ErrorMsg-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-ErrorStatus-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize_date(-Now-) ]]\0A[[db_execute(proc)]]\0A\0A[[var proc3 = "stp_CARE_SaveEmailInfo "]]\0A[[let proc3 += nextActionID]]\0A[[let proc3 += "," ]]\0A[[let proc3 += transid]]\0A[[let proc3 += "," ]]\0A[[let proc3 += programID]]\0A[[db_execute(proc3)]]
+Halt on Failure Script Error: 1
+Post-Send Script: [[var proc = "stp_CARE_addEmailJob " ]]\0A[[let proc += sqlize_date(-StartDate-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize_date(-EndDate-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-DNSStats-) ]]\0A[[let proc += "," ]]\0A[[let proc += -MessageAbortions- ]]\0A[[let proc += "," ]]\0A[[let proc += -MessageSuccesses- ]]\0A[[let proc += "," ]]\0A[[let proc += -MessageFailures- ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-OperationSummary-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-PerformanceStats-) ]]\0A[[let proc += "," ]]\0A[[let proc += -RecipientFailures- ]]\0A[[let proc += "," ]]\0A[[let proc += -RecipientSuccesses- ]]\0A[[let proc += "," ]]\0A[[let proc += -RejectionCount- ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize(-SNMPStats-) ]]\0A[[let proc += "," ]]\0A[[let proc += sqlize_date(-Now-) ]]\0A[[db_execute(proc)]]\0A\0A
+Pre-Send Batch: 
+Post-Send Batch: 
+EHLO Domain: 
+Date Format: m/d/yy
+Time Format: H:ii:ss
+SMTP Timeout: 600
+SMTP Server: Server=StgSMTP1.veretech.net Port=25 Authentication=none
+Auto-Detect DNS: 1
+DNS Server: 192.168.33.200
+DNS Server: 192.168.33.11
+DNS Port: 53
+DNS Timeout: 30
+Removal Method: 1
+Removal Column: 
+
+
+Executing database SELECT statement:
+SELECT *
+FROM vwContactManage
+WHERE nextActionID = 5 AND programID = 4 --AND nextActionDate <= CONVERT(varchar(10), getdate() + 1, 101) + ' 12:00:00 AM'
+
+Query successful.  5 records returned.
+Columns in result set: email, transid, FirstName, LastName, newyear, newmake, newmodel, newstyle, nextActionID, nextActionDate, unsubscribe, programID, year, make, model, style, dealername, dealerAddress, dealerAddressCont, dealerPhone, dealerURL
+
+itteam@veretech.com: accepted
+itteam@veretech.com: accepted
+itteam@veretech.com: accepted
+itteam@veretech.com: accepted
+itteam@veretech.com: accepted
+
+All database records have been fetched.
+
+
+All messages have been built: 5 recipients, 0 rejected
+
+SENDING itteam@veretech.com: success
+SENDING itteam@veretech.com: success
+SENDING itteam@veretech.com: success
+SENDING itteam@veretech.com: success
+SENDING itteam@veretech.com: success
+
+*************************************************
+* Started at: 27-Apr-2011 2:55:29p
+* Finished at: 27-Apr-2011 2:56:30p
+* 5 messages sent successfully
+* No failures
+* 
+* PERFORMANCE STATISTICS
+* Operation elapsed time: 60.1 seconds
+* Bytes sent: 19.04 KB
+* Throughput: 324 bytes per second
+* Thread time: 83 milliseconds
+* Average thread throughput: 229.42 KB per second
+* Messages per hour: 299
+* Average message size: 3.81 KB
+* Database time: 59.4 seconds
+* 
+* DNS STATISTICS
+* No DNS queries were issued.
+* 
+* SNMP STATISTICS
+* TCP segments in: 569
+* TCP segments out: 586
+* TCP receive errors: 0
+* TCP segments retransmitted: 8
+* UDP datagrams in: 56
+* UDP datagrams out: 18
+* UDP datagram errors: 0
+* UDP datagrams bounced: 1
+*************************************************

@@ -1,0 +1,6 @@
+-------------------------------------------------------------------
+Tue Mar 18 16:35:31 EDT 2014 - Start
+Tue Mar 18 16:35:31 EDT 2014 - getHTTPObject()
+Tue Mar 18 16:35:31 EDT 2014 - callService()
+Tue Mar 18 16:35:32 EDT 2014 - handleServiceResponse Response: 
+Tue Mar 18 16:35:32 EDT 2014 - End

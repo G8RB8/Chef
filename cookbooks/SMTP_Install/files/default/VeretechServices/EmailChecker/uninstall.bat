@@ -1,0 +1,1 @@
+InstallUtil /U VeretechEmailChecker.exe

@@ -1,0 +1,1 @@
+InstallUtil /u LeadAssembler.exe

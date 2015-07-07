@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<configuration>
+
+	<appSettings>
+		<add key="TimerInMinutes" value="2" />
+		<add key="TimeInQueue" value="8" />
+		<add key="BadEmailFolder" value="C:\inetpub\mailroot\Badmail\" />
+
+		<add key="FindTransIDString" value="?tid=3D=,?tid=3D,?tid="  />
+		<add key="FindEndString" value="&amp;em=" />
+
+		<add key="EmailFrom" value="Email Checker Service &lt;vemailchecker_noreply@intelliprice.com&gt;" />
+		<add key="EmailTo" value="" />
+		<add key="EmailBCC" value="bbernstein@veretech.com;" />
+
+		<add key="SQLConnStr" value="Server=vtechdbeast.cbwfu7dlkwwq.us-east-1.rds.amazonaws.com; Initial Catalog=etradein; User ID=app_ETDN; Password=#$M1nIM0v53!; Application Name=EmailChkr "/>
+		<add key="SQLServer" value="vtechdbeast.cbwfu7dlkwwq.us-east-1.rds.amazonaws.com;etradein;app_ETDN;#$M1nIM0v53!; Application Name=EmailChkr" />
+
+		<add key="EventLogName" value="Email Checker" />
+		<add key="ServicePath" value="D:\VeretechServices\Veretech Email Checker\" />
+		<add key="Debug" value="Y" />
+		<add key="LogPath" value="D:\VeretechServices\Veretech Email Checker\Log\" />
+	</appSettings>
+
+</configuration>

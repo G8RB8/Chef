@@ -1,0 +1,572 @@
+=====================================
+Gammadyne Mailer 44.0 
+Send Operation
+Performed on 7/8/2014 4:39:02 p.m.
+=====================================
+
+
+----- Operation Parameters ------
+From: Black Book Results <bbresults@blackbookinformation.com>
+To: (auto)
+Reply To: 
+CC: 
+BCC: 
+Subject: Confirming Your Black Book Results on your [[newyear]] [[newmake]] [[newmodel]]  
+Sender: Black Book Results <bbresults@blackbookinformation.com>
+Reading Confirmation: 
+Expiration Date: 
+Header Character Set: 
+Extended Characters Allowed: 1
+Custom Headers: 
+Database Connect String: DRIVER=SQL Server;SERVER=AMZESQL01;UID=app_care;APP=Gammadyne Mailer for SafetyNet;WSID=AMZESMTP01;DATABASE=CCare;Network=DBMSSOCN
+Table Name: vw_ForReturnPathAppraisals
+Identity Column: email
+Recipient Column: email
+Order Column: 
+Order Reversed: 0
+WHERE Clause: 
+Custom SELECT Statement: 
+Trim Data: 0
+Store Sent Date: (disabled)
+Filter Sent Date: (disabled)
+Cursor Type: Static
+SQL Date Format: SQL Server:  {ts 'yyyy-mm-dd hh:mm:ss'}
+SQL Delimiter Mode: Automatic
+SQL Delimiter Type: "
+Eliminate Duplicates: 0
+User Exclusions: 
+Domain Exclusions: 
+Domain Inclusions: 
+Begin With Recipient: (disabled)
+Send Only To Range: (disabled)
+Exclusions-External: 
+Text Body-External: 
+Text Body-Internal: 
+Text Body Subtype: 0
+Text Body Encoding: 2
+Text Body Character Set: 
+Text Body Line Length: 75
+HTML Body-External: 
+HTML Body-Internal: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">\0D\0A<HTML xmlns:o>\0D\0A<HEAD>\0D\0A<title>temp</title>\0D\0A\09\09<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">\0D\0A\09\09<meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">\0D\0A\09\09<meta name="vs_defaultClientScript" content="JavaScript">\0D\0A<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">\0D\0A\09    <style type="text/css">\0D\0A<!--\0D\0A.EmailBody {\0D\0A\09font-family: Verdana, Arial, Helvetica, sans-serif;\0D\0A\09font-size: 12px;\0D\0A\09color: #555555;\0D\0A\09border: 1pt solid #CCCCCC;\0D\0A\09vertical-align: top;\0D\0A}\0D\0A.Salute {\0D\0A\09font-size: 14px;\0D\0A\09font-weight: bold;\0D\0A\09color: #333333;\0D\0A\09MARGIN: 15px 10px 3px;\0D\0A\0D\0A}\0D\0A.NoMargins {\0D\0A\09PADDING-RIGHT: 0px; \0D\0A\09PADDING-LEFT: 0px; \0D\0A\09PADDING-BOTTOM: 0px; \0D\0A\09PADDING-TOP: 0px\0D\0A}\0D\0A.Questions {\0D\0A\09list-style-type: square;\0D\0A\09font-weight: bolder;\0D\0A}\0D\0A.Special {\0D\0A\09font-size: smaller;\0D\0A\09vertical-align: super;\0D\0A}\0D\0A-->\0D\0A        </style>\0D\0A</HEAD>\0D\0A<body MS_POSITIONING="GridLayout" bgcolor="#F7F8F8" >\0D\0A<!-- campaignid: [[campaignID]]-->\0D\0A<TABLE align="center" bordercolor="#cccccc" cellSpacing="5" cellPadding="15" width="750" bgcolor="#ffffff" class="EmailBody" id="tblEmailBody">\0D\0A\09<TR>\0D\0A\09\09<TD class=NoMargins vAlign=top align=left width="70%">\0D\0A\09\09\09<P class=Salute><SPAN style="FONT-SIZE: 24pt; FONT-FAMILY: 'Monotype Corsiva'">Black Book </SPAN><SPAN class=Special>®</SPAN><SPAN style="FONT-SIZE: 18pt; COLOR: #3366ff; FONT-FAMILY: Arial">&nbsp;Online</SPAN></P>\0D\0A\09\09</TD>\0D\0A\09</TR>\0D\0A\09<TR>\0D\0A\09\09<TD class=NoMargins align=left><HR width="80%"></TD>\0D\0A\09</TR>\0D\0A\09<TR>\0D\0A\09\09<TD>\0D\0A\09\09\09<P>Black Book<span class="Special">&reg;</span> Online provided you with a trade estimate eight days ago. We wanted to remind you that this estimate will expire in two days.</P>\0D\0A\09\09\09<p>Used vehicles typically depreciate about 1% a month. This can add up quickly. So if you're thinking of buying soon, it may not pay to wait.</p>\0D\0A\09\09\09<p>If you haven't spoken with [[dealername]] yet, the dealership which originally expressed an interest in your vehicle, we can assist you. Simply select the relevant option below.</p>\0D\0A\09\09\09<ul>\0D\0A\09\09\09\09<li class="Questions">If you have questions and would like to speak with someone from [[dealername]] , <a href="http://www.intelliprice.com/safetynet/start.htm?transid=[[transid]]&email=3&Type=NC&progID=1">click here</a></li>\0D\0A\09\09\09\09<li class="Questions">If you have purchased a vehicle from [[dealername]], <a href="http://www.intelliprice.com/safetynet/start.htm?transid=[[transid]]&email=3&Type=PFD&progID=1">click here</a></li>\0D\0A\09\09\09\09<li class="Questions">If you have purchased a vehicle from another dealership, <a href="http://www.intelliprice.com/safetynet/start.htm?transid=[[transid]]&email=3&Type=PFOD&progID=1">click here</a></li>\0D\0A\09\09\09\09<li class="Questions">If you are still shopping and not ready to speak with someone at the dealership, <a href="http://www.intelliprice.com/safetynet/start.htm?transid=[[transid]]&email=3&Type=CL&progID=1">click here</a></li>\0D\0A\09\09\09</ul>\09\09\09\09\09\0D\0A\09\09</TD>\0D\0A\09</TR>\0D\0A\09<TR>\0D\0A\09\09<TD>\0D\0A\09\09\09<P>We hope to make buying your next vehicle easier!</P>\0D\0A\09\09\09<P>Customer Service Team,<br> Black Book<span class="Special">&reg;</span> Online </P>\0D\0A\09\09</TD>\0D\0A\09</TR>\0D\0A\09<TR>\0D\0A\09\09<TD align="left" valign="top" width="70%" style="BORDER-TOP: #cccccc 1px solid">\0D\0A\09\09\09<p style="MARGIN: 3px 10px"><font color="#666666" size="1" face="Tahoma">If you don't wish to receive periodic updates from Black Book<span class="Special">&reg;</span> Online regarding your trade, please <a href="http://www.intelliprice.com/safetynet/start.htm?transid=[[transid]]&email=3&Type=R&progID=1">click here</a> to be removed from our list. </font></P>\0D\0A\09\09</TD>\0D\0A\09</TR>\0D\0A\09<TR>\0D\0A\09\09<TD align="center" valign="top" width="70%" style="BORDER-TOP: #cccccc 1px solid">\0D\0A\09\09\09<p style="MARGIN: 3px 10px"><font color="#666666" size="1" face="Tahoma"> Black Book<span class="Special">&reg;</span> Online is provided by Veretech Holdings, Inc. a Hearst Business Media Company</font></P>\0D\0A\09\09</TD>\0D\0A\09</TR>\0D\0A</TABLE>\0D\0A</body>\0D\0A</HTML>
+Auto Parse Images: 1
+Image Locality: External
+Canonicalize Data: 1
+Canonicalize Extended: 0
+HTML Domain Exclusions: 
+HTML Body Line Length: (disabled)
+Build Text From HTML: 0
+HTML Body Encoding: 4
+HTML Body Character Set: ISO-8859-1
+Embedded Files List: 
+Embedded Files Directory: 
+Ignore Errors In Embedded Files List: 0
+Attached Files List: 
+Attached Files Directory: 
+Ignore Errors in Attached Files List: 0
+Zip Attachments: 0
+Process G-Merge Inside Attachments: 0
+Constructed Attachment Line Length: 0
+Test Mode: 0
+Preview Mode: 0
+Last Recipient Only: 0
+Threads: 32
+Direct Delivery: 0
+Pulse: None
+Immediate Retries: 0
+Recycle Connection: 1
+Recycle Limit: 50
+Append Successes: D:\\Gammadyne\\SafetyNet\\Logs\\success1*.log
+Append Failures: D:\\Gammadyne\\SafetyNet\\Logs\\fail1*.log
+Append Rejections: D:\\Gammadyne\\SafetyNet\\Logs\\rej1*.log
+Host Stats: 
+Delivery Status Notifications: Failures
+Periodically Send Copy: (disabled)
+Log Recipient Data: 0
+Pre-Send Script: 
+Send Script: 
+Success Script: 
+Halt on Success Script Error: 1
+Failure Script: 
+Halt on Failure Script Error: 1
+Post-Send Script: 
+Pre-Send Batch: 
+Post-Send Batch: 
+EHLO Domain: Amzesmtp01.blackbookinformation.com
+Date Format: m/d/yy
+Time Format: H:ii:ss
+SMTP Encryption: Optional
+SMTP Timeout: 600
+SMTP Server: Server=email-smtp.us-east-1.amazonaws.com Port=465 Authentication=login User=AKIAJEEH3YOCI4AJZYJQ
+DNS uses OS: 1
+Removal Method: Insert exclamation point
+
+
+Executing database SELECT statement:
+SELECT *
+FROM vw_ForReturnPathAppraisals
+
+Query successful.  210 records returned.
+Columns in result set: transid, name, newyear, newmake, newmodel, newstyle, lastname, year, make, model, style, dealername, dealerAddress, dealerAddressCont, dealerPhone, campaignID, email
+
+gbritton@veretech.com: accepted
+0000ref000.veretech@000.monitor1.returnpath.net: accepted
+0000refzzz.veretech@zzz.monitor1.returnpath.net: accepted
+aaa1asi@aol.com: accepted
+aaa1asi@bellsouth.net: accepted
+aaa1asi@comcast.net: accepted
+aaa1asi@cox.net: accepted
+aaa1asi@earthlink.net: accepted
+aaa1asi@gmail.com: accepted
+aaa1asi@hotmail.com: accepted
+aaa1asi@mac.com: accepted
+aaa1asi@optonline.com: accepted
+aaa1asi@usa.net: accepted
+aaa1asi@yahoo.com: accepted
+aaa1everyone@everyonerp.com: accepted
+aaa2asi@earthlink.net: accepted
+aaa3asi@cs.com: accepted
+aaa522asi@biz.rr.com: accepted
+aaa5asi@netscape.net: accepted
+acacius.page@mac.com: accepted
+adresmaybar@yahoo.com: accepted
+al.alleborn@comcast.net: accepted
+anita1232@optonline.com: accepted
+axelnortby@hotmail.com: accepted
+bartender85aybar@yahoo.com: accepted
+beaubillinslea3@yahoo.com: accepted
+beauburnside@mac.com: accepted
+beniangiatti12@optonline.com: accepted
+black_barry@cox.net: accepted
+cammie88deakins@optonline.com: accepted
+carpetman_miller22@hotmail.com: accepted
+ccknight3@hotmail.com: accepted
+charles_larryparks12@yahoo.com: accepted
+SENDING 0000ref000.veretech@000.monitor1.returnpath.net: success
+SENDING aaa1asi@bellsouth.net: success
+SENDING aaa1asi@cox.net: success
+SENDING 0000refzzz.veretech@zzz.monitor1.returnpath.net: success
+SENDING aaa1asi@aol.com: success
+SENDING aaa1asi@comcast.net: success
+SENDING aaa1asi@gmail.com: success
+SENDING aaa1asi@mac.com: success
+SENDING aaa1asi@earthlink.net: success
+SENDING aaa1asi@optonline.com: success
+SENDING charles_larryparks12@yahoo.com: success
+SENDING aaa1asi@usa.net: success
+SENDING aaa2asi@earthlink.net: success
+SENDING aaa1asi@yahoo.com: success
+SENDING aaa1asi@hotmail.com: success
+SENDING aaa5asi@netscape.net: success
+SENDING aaa522asi@biz.rr.com: success
+SENDING aaa3asi@cs.com: success
+charlieshull@yahoo.com: accepted
+cheriwells@usa.net: accepted
+chipdarlington@earthlink.net: accepted
+SENDING acacius.page@mac.com: success
+SENDING al.alleborn@comcast.net: success
+cochran31_meyrink@yahoo.com: accepted
+corkigrazer12@usa.net: accepted
+cusackliz55@cox.net: accepted
+daniel_ades@yahoo.com: accepted
+SENDING anita1232@optonline.com: success
+dardensevern@cs.com: accepted
+darlington_chip41@yahoo.com: accepted
+david.marvit@sbcglobal.net: accepted
+david.ursin@sbcglobal.net: accepted
+dbabcock1@mac.com: accepted
+ddd1gdad@rpgodad.com: accepted
+ddd1webmailus@webmailrp.net: accepted
+dddvrzn@verizon.net: accepted
+SENDING axelnortby@hotmail.com: success
+delauter3@yahoo.com: accepted
+devlin_miltondean3@hotmail.com: accepted
+SENDING cammie88deakins@optonline.com: success
+doobiehankin@aol.com: accepted
+dorsey_congressman77@hotmail.com: accepted
+SENDING beniangiatti12@optonline.com: success
+SENDING bartender85aybar@yahoo.com: success
+SENDING black_barry@cox.net: success
+SENDING carpetman_miller22@hotmail.com: success
+SENDING ccknight3@hotmail.com: success
+SENDING beaubillinslea3@yahoo.com: success
+dreyfus_22randolph@yahoo.com: accepted
+dsmonterosso@sbcglobal.net: accepted
+eee2webmailus@webmailrp.net: accepted
+SENDING cochran31_meyrink@yahoo.com: success
+SENDING charlieshull@yahoo.com: success
+eugenezador@cs.com: accepted
+fenton_okomoto12@earthlink.net: accepted
+fenton_okomoto12@hotmail.com: accepted
+ferrero47clerk@aol.com: accepted
+SENDING cusackliz55@cox.net: success
+SENDING cheriwells@usa.net: success
+SENDING chipdarlington@earthlink.net: success
+force92backes@earthlink.net: accepted
+frickermackenzie@netscape.net: accepted
+SENDING dardensevern@cs.com: success
+SENDING david.ursin@sbcglobal.net: success
+SENDING dorsey_congressman77@hotmail.com: success
+SENDING daniel_ades@yahoo.com: success
+SENDING doobiehankin@aol.com: success
+SENDING darlington_chip41@yahoo.com: success
+SENDING ddd1webmailus@webmailrp.net: success
+SENDING dddvrzn@verizon.net: success
+SENDING ddd1gdad@rpgodad.com: success
+SENDING eee2webmailus@webmailrp.net: success
+SENDING delauter3@yahoo.com: success
+friedhofer.hugo2@comcast.net: accepted
+gabriellaborzell@cs.com: accepted
+gggvrzn@verizon.net: accepted
+gjarrett919@hotmail.com: accepted
+goodman512stiller@biz.rr.com: accepted
+gordon.cusack2@cox.net: accepted
+grazer19_produce@earthlink.net: accepted
+gupson@mac.com: accepted
+hans377mohlman@dc.rr.com: accepted
+harriet4michaels@netscape.net: accepted
+hathaway_jerry85@yahoo.com: accepted
+SENDING dreyfus_22randolph@yahoo.com: success
+SENDING dbabcock1@mac.com: success
+SENDING david.marvit@sbcglobal.net: success
+SENDING fenton_okomoto12@hotmail.com: success
+SENDING fenton_okomoto12@earthlink.net: success
+SENDING eugenezador@cs.com: success
+SENDING gbritton@veretech.com: success
+SENDING adresmaybar@yahoo.com: success
+SENDING ferrero47clerk@aol.com: success
+SENDING aaa1everyone@everyonerp.com: success
+SENDING force92backes@earthlink.net: success
+henry.roth2@gmail.com: accepted
+hhh3webmailus@webmailrp.net: accepted
+iii2everyone@everyonerp.com: accepted
+iii2gdad@rpgodad.com: accepted
+ina_gould@earthlink.net: accepted
+isabelcooley@earthlink.net: accepted
+isabellewalker@usa.net: accepted
+israel_neal22@earthlink.net: accepted
+j_blum33@bellsouth.net: accepted
+james_carrington@sbcglobal.net: accepted
+james_leicester33@comcast.net: accepted
+SENDING devlin_miltondean3@hotmail.com: success
+SENDING gjarrett919@hotmail.com: success
+SENDING gordon.cusack2@cox.net: success
+SENDING frickermackenzie@netscape.net: success
+SENDING friedhofer.hugo2@comcast.net: success
+SENDING dsmonterosso@sbcglobal.net: success
+SENDING beauburnside@mac.com: success
+SENDING corkigrazer12@usa.net: success
+SENDING goodman512stiller@biz.rr.com: success
+SENDING harriet4michaels@netscape.net: success
+SENDING grazer19_produce@earthlink.net: success
+SENDING gupson@mac.com: success
+SENDING gggvrzn@verizon.net: success
+SENDING gabriellaborzell@cs.com: success
+jeffhiggins303@aol.com: accepted
+jjj4webmailus@webmailrp.net: accepted
+jjjvrzn@verizon.net: accepted
+joannewbarron@hotmail.com: accepted
+SENDING hathaway_jerry85@yahoo.com: success
+SENDING henry.roth2@gmail.com: success
+joe.dorsey@sbcglobal.net: accepted
+johnvasily@usa.net: accepted
+joietom.bartel@comcast.net: accepted
+SENDING isabelcooley@earthlink.net: success
+SENDING hans377mohlman@dc.rr.com: success
+SENDING hhh3webmailus@webmailrp.net: success
+SENDING j_blum33@bellsouth.net: success
+SENDING ina_gould@earthlink.net: success
+SENDING james_carrington@sbcglobal.net: success
+SENDING james_leicester33@comcast.net: success
+josanrusso@bellsouth.net: accepted
+joy_ferro@sbcglobal.net: accepted
+jpmarino67@optonline.com: accepted
+kendrew8taylor@cox.net: accepted
+kevinhurley1964@sbcglobal.net: accepted
+kilmerknight85@yahoo.com: accepted
+kkk5webmailus@webmailrp.net: accepted
+lapaglia8giardin@netscape.net: accepted
+SENDING isabellewalker@usa.net: success
+SENDING iii2everyone@everyonerp.com: success
+laser_ray_victim32@yahoo.com: accepted
+SENDING iii2gdad@rpgodad.com: success
+laser_specialist85knox@hotmail.com: accepted
+lazlo_holyfeldd22@yahoo.com: accepted
+lllvrzn@verizon.net: accepted
+louisgcarnagle@yahoo.com: accepted
+lowellcornell@usa.net: accepted
+lucy.whitmore3@gmail.com: accepted
+lyndaweismeir@usa.net: accepted
+SENDING israel_neal22@earthlink.net: success
+SENDING jjj4webmailus@webmailrp.net: success
+SENDING joe.dorsey@sbcglobal.net: success
+SENDING jeffhiggins303@aol.com: success
+SENDING jjjvrzn@verizon.net: success
+mabakes@sbcglobal.net: accepted
+maratwingordon@optonline.com: accepted
+mariimak@usa.net: accepted
+mariosoldati@cs.com: accepted
+SENDING josanrusso@bellsouth.net: success
+marlin.whitmore4@gmail.com: accepted
+SENDING joietom.bartel@comcast.net: success
+SENDING kilmerknight85@yahoo.com: success
+SENDING joannewbarron@hotmail.com: success
+mgcrabtree@sbcglobal.net: accepted
+SENDING joy_ferro@sbcglobal.net: success
+SENDING kendrew8taylor@cox.net: success
+michellemeyrink90@hotmail.com: accepted
+mmm1asi@aol.com: accepted
+mmm1asi@bellsouth.net: accepted
+mmm1asi@comcast.net: accepted
+mmm1asi@cox.net: accepted
+mmm1asi@earthlink.net: accepted
+mmm1asi@gmail.com: accepted
+SENDING lazlo_holyfeldd22@yahoo.com: success
+SENDING laser_ray_victim32@yahoo.com: success
+SENDING lowellcornell@usa.net: success
+SENDING jpmarino67@optonline.com: success
+SENDING laser_specialist85knox@hotmail.com: success
+mmm1asi@hotmail.com: accepted
+mmm1asi@mac.com: accepted
+mmm1asi@optonline.com: accepted
+mmm1asi@usa.net: accepted
+mmm1asi@yahoo.com: accepted
+SENDING lapaglia8giardin@netscape.net: success
+SENDING lucy.whitmore3@gmail.com: success
+SENDING mabakes@sbcglobal.net: success
+SENDING maratwingordon@optonline.com: success
+SENDING lyndaweismeir@usa.net: success
+SENDING marlin.whitmore4@gmail.com: success
+SENDING lllvrzn@verizon.net: success
+SENDING mariosoldati@cs.com: success
+SENDING louisgcarnagle@yahoo.com: success
+SENDING mariimak@usa.net: success
+SENDING kkk5webmailus@webmailrp.net: success
+SENDING johnvasily@usa.net: success
+mmm3asi@cs.com: accepted
+mmm517asi@biz.rr.com: accepted
+mmm5asi@netscape.net: accepted
+mmm6webmailus@webmailrp.net: accepted
+montedodd@cs.com: accepted
+monterosso6_7cafeteria@hotmail.com: accepted
+MsKiki9Douveas@netscape.net: accepted
+nadinevix@earthlink.net: accepted
+SENDING mmm1asi@gmail.com: success
+SENDING mmm1asi@comcast.net: success
+ndeforestiii@aol.com: accepted
+SENDING mmm1asi@bellsouth.net: success
+SENDING mgcrabtree@sbcglobal.net: success
+SENDING mmm1asi@optonline.com: success
+SENDING mmm1asi@hotmail.com: success
+SENDING mmm1asi@aol.com: success
+nnn3everyone@everyonerp.com: accepted
+nnn3gdad@rpgodad.com: accepted
+nnnvrzn@verizon.net: accepted
+norahmuldoon@mac.com: accepted
+oldlady_gould44@yahoo.com: accepted
+p.galvin42@comcast.net: accepted
+SENDING mmm1asi@mac.com: success
+SENDING mmm1asi@earthlink.net: success
+paulhutchings303@aol.com: accepted
+pennybaker3@earthlink.net: accepted
+peter_likidis720@hotmail.com: accepted
+pieroportalupi@cs.com: accepted
+poft_pat99@earthlink.net: accepted
+SENDING mmm517asi@biz.rr.com: success
+SENDING kevinhurley1964@sbcglobal.net: success
+SENDING mmm3asi@cs.com: success
+SENDING michellemeyrink90@hotmail.com: success
+SENDING monterosso6_7cafeteria@hotmail.com: success
+SENDING mmm6webmailus@webmailrp.net: success
+SENDING mmm1asi@yahoo.com: success
+SENDING mmm1asi@cox.net: success
+SENDING nadinevix@earthlink.net: success
+ppp7webmailus@webmailrp.net: accepted
+ptulley@earthlink.net: accepted
+publicist48_eisenberg@hotmail.com: accepted
+qmpartseed9@netscape.net: accepted
+SENDING ndeforestiii@aol.com: success
+razatos12_porter@hotmail.com: accepted
+richardchew@bellsouth.net: accepted
+robbins33raymond@cox.net: accepted
+SENDING montedodd@cs.com: success
+roman3aykroyd@optonline.com: accepted
+rose7plummer@netscape.net: accepted
+rpedx1@edx.assurancesys.com: accepted
+SENDING nnn3gdad@rpgodad.com: success
+SENDING mmm5asi@netscape.net: success
+SENDING mmm1asi@usa.net: success
+rpedx2@edx.assurancesys.com: accepted
+rpedx3@edx.assurancesys.com: accepted
+SENDING oldlady_gould44@yahoo.com: success
+SENDING paulhutchings303@aol.com: success
+SENDING poft_pat99@earthlink.net: success
+SENDING nnnvrzn@verizon.net: success
+SENDING p.galvin42@comcast.net: success
+SENDING nnn3everyone@everyonerp.com: success
+SENDING ppp7webmailus@webmailrp.net: success
+SENDING ptulley@earthlink.net: success
+SENDING publicist48_eisenberg@hotmail.com: success
+SENDING norahmuldoon@mac.com: success
+rpml1@ml.assurancesys.com: accepted
+rpml2@ml.assurancesys.com: accepted
+rpml3@ml.assurancesys.com: accepted
+rrr8webmailus@webmailrp.net: accepted
+rrrvrzn@verizon.net: accepted
+sallycato@mac.com: accepted
+sandymmeredith@cs.com: accepted
+science_fairstudent99@yahoo.com: accepted
+SENDING richardchew@bellsouth.net: success
+SENDING pennybaker3@earthlink.net: success
+SENDING razatos12_porter@hotmail.com: success
+SENDING peter_likidis720@hotmail.com: success
+SENDING robbins33raymond@cox.net: success
+SENDING qmpartseed9@netscape.net: success
+SENDING rpedx1@edx.assurancesys.com: success
+SENDING MsKiki9Douveas@netscape.net: success
+SENDING rpedx3@edx.assurancesys.com: success
+sherrynugil@hotmail.com: accepted
+shuttle_peralta12@yahoo.com: accepted
+skate_tangen32@earthlink.net: accepted
+SENDING rpedx2@edx.assurancesys.com: success
+spiro_23ulrich@hotmail.com: accepted
+sss4everyone@everyonerp.com: accepted
+sss4gdad@rpgodad.com: accepted
+stillo.ashmore@cox.net: accepted
+stober_waitress912@hotmail.com: accepted
+stuart2mackenzie@netscape.net: accepted
+sweigart_gate44@hotmail.com: accepted
+SENDING pieroportalupi@cs.com: success
+SENDING rrr8webmailus@webmailrp.net: success
+SENDING rose7plummer@netscape.net: success
+SENDING roman3aykroyd@optonline.com: success
+SENDING rpml3@ml.assurancesys.com: success
+SENDING sallycato@mac.com: success
+SENDING rpml1@ml.assurancesys.com: success
+SENDING sandymmeredith@cs.com: success
+SENDING rrrvrzn@verizon.net: success
+SENDING rpml2@ml.assurancesys.com: success
+SENDING science_fairstudent99@yahoo.com: success
+tarquingotch@aol.com: accepted
+tensecond.tom5@gmail.com: accepted
+tsather@pi.assurancesys.com: accepted
+ttangen@bellsouth.net: accepted
+ttt9webmailus@webmailrp.net: accepted
+uuu10webmailus@webmailrp.net: accepted
+SENDING skate_tangen32@earthlink.net: success
+SENDING sherrynugil@hotmail.com: success
+SENDING sss4everyone@everyonerp.com: success
+uuuvrzn@verizon.net: accepted
+vilmos@bellsouth.net: accepted
+SENDING sss4gdad@rpgodad.com: success
+vince523lafleur@biz.rr.com: accepted
+wallyprosky88@optonline.com: accepted
+washburntaxidriver@gmail.com: accepted
+SENDING stuart2mackenzie@netscape.net: success
+SENDING stober_waitress912@hotmail.com: success
+SENDING stillo.ashmore@cox.net: success
+SENDING spiro_23ulrich@hotmail.com: success
+SENDING sweigart_gate44@hotmail.com: success
+SENDING tarquingotch@aol.com: success
+willette.joanne@earthlink.net: accepted
+willie.jocko@gmail.com: accepted
+willyknox@sbcglobal.net: accepted
+www5everyone@everyonerp.com: accepted
+www5gdad@rpgodad.com: accepted
+wwwvrzn@verizon.net: accepted
+SENDING shuttle_peralta12@yahoo.com: success
+SENDING ttangen@bellsouth.net: success
+yuki.shimoda@mac.com: accepted
+SENDING ttt9webmailus@webmailrp.net: success
+SENDING tensecond.tom5@gmail.com: success
+zeta_nicholson4@cox.net: accepted
+zsigmond@bellsouth.net: accepted
+zsigmond_chew33@hotmail.com: accepted
+zzz1asi@aol.com: accepted
+SENDING uuuvrzn@verizon.net: success
+zzz1asi@bellsouth.net: accepted
+SENDING tsather@pi.assurancesys.com: success
+SENDING washburntaxidriver@gmail.com: success
+zzz1asi@comcast.net: accepted
+zzz1asi@cox.net: accepted
+zzz1asi@earthlink.net: accepted
+zzz1asi@gmail.com: accepted
+zzz1asi@hotmail.com: accepted
+zzz1asi@mac.com: accepted
+zzz1asi@optonline.com: accepted
+zzz1asi@usa.net: accepted
+SENDING wallyprosky88@optonline.com: success
+zzz1asi@yahoo.com: accepted
+zzz593asi@biz.rr.com: accepted
+zzz5asi@netscape.net: accepted
+SENDING willette.joanne@earthlink.net: success
+SENDING vilmos@bellsouth.net: success
+SENDING zsigmond@bellsouth.net: success
+SENDING zeta_nicholson4@cox.net: success
+SENDING willie.jocko@gmail.com: success
+SENDING yuki.shimoda@mac.com: success
+zzzzref000.veretech@000.monitor1.returnpath.net: accepted
+zzzzrefzzz.veretech@zzz.monitor1.returnpath.net: accepted
+
+All database records have been fetched (210 in total).
+
+
+All messages have been built: 210 recipients, 0 rejected
+
+SENDING zzz1asi@aol.com: success
+SENDING zzz1asi@comcast.net: success
+SENDING zsigmond_chew33@hotmail.com: success
+SENDING uuu10webmailus@webmailrp.net: success
+SENDING vince523lafleur@biz.rr.com: success
+SENDING zzz1asi@cox.net: success
+SENDING willyknox@sbcglobal.net: success
+SENDING zzz1asi@earthlink.net: success
+SENDING www5gdad@rpgodad.com: success
+SENDING zzz1asi@bellsouth.net: success
+SENDING wwwvrzn@verizon.net: success
+SENDING www5everyone@everyonerp.com: success
+SENDING zzz1asi@usa.net: success
+SENDING zzz1asi@hotmail.com: success
+SENDING zzz5asi@netscape.net: success
+SENDING zzz1asi@yahoo.com: success
+SENDING zzz1asi@mac.com: success
+SENDING zzzzrefzzz.veretech@zzz.monitor1.returnpath.net: success
+SENDING zzz593asi@biz.rr.com: success
+SENDING zzz1asi@optonline.com: success
+SENDING zzz1asi@gmail.com: success
+SENDING zzzzref000.veretech@000.monitor1.returnpath.net: success
+
+***************************************
+* 210 messages sent successfully
+* No failures
+* 
+* Started: 7/8/2014 16:39:02
+* Completed: 7/8/2014 16:39:07
+* Elapsed time: 4.2 seconds
+* 
+* PERFORMANCE STATISTICS
+* Bytes sent: 1.02 MB
+* Throughput: 251.35 KB/s
+* Thread time: 40.5 seconds
+* Average thread throughput: 25.73 KB/s
+* Messages per hour: 182,168
+* Average message size: 4.97 KB
+* Database time: 548 milliseconds
+* 
+* DNS STATISTICS
+* DNS time: 498 milliseconds
+* DNS queries: 32
+* Failures: 0 (0%)
+* "A" lookups: 32
+* "A" failures: 0 (0%)
+* 
+* SNMP STATISTICS
+* TCP segments in: 3078
+* TCP segments out: 4164
+* TCP receive errors: 0
+* TCP segments retransmitted: 15
+* UDP datagrams in: 47
+* UDP datagrams out: 76
+* UDP datagram errors: 0
+* UDP datagrams bounced: 0
+***************************************
+
